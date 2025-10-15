@@ -2,7 +2,7 @@ type: module
 name: Migrate Islandora 7.x to CLAW
 description: 'Migration setup for migrating from an Islandora 7.x instance to CLAW.'
 package: Islandora
-core_version_requirement: ^8 || ^9
+core_version_requirement: ^9 || ^10
 dependencies:
   - drupal:migrate
   - migrate_conditions:migrate_conditions
