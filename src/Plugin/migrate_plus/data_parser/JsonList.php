@@ -36,7 +36,7 @@ class JsonList extends Json {
    * Islandora Source can provide 0 urls, we need to exit or it throws an
    * error.
    */
-  protected function nextSource() {
+  protected function nextSource(): bool {
     if (count($this->urls) == 0) {
       return FALSE;
     }

@@ -20,7 +20,7 @@ class MergeIgnoreEmpty extends Merge {
   /**
    * {@inheritdoc}
    */
-  public function transform($value, MigrateExecutableInterface $migrate_executable, Row $row, $destination_property) {
+  public function transform($value, MigrateExecutableInterface $migrate_executable, Row $row, $destination_property): array {
     // Trick the merge with two empty arrays if the value isn't there at all.
     if (empty($value)) {
       $value = [[],[]];

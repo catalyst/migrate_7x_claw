@@ -33,7 +33,7 @@ class AuthenticatedXml extends SimpleXml {
   /**
    * {@inheritdoc}
    */
-  protected function fetchNextRow() {
+  protected function fetchNextRow(): void {
     $target_element = array_shift($this->matches);
     // If we've found the desired element, populate the currentItem and
     // currentId with its data.
@@ -77,7 +77,7 @@ class AuthenticatedXml extends SimpleXml {
    * Islandora Source can provide 0 urls, we need to exit or it throws an
    * error.
    */
-  protected function nextSource() {
+  protected function nextSource(): bool {
     if (count($this->urls) == 0) {
       return FALSE;
     }

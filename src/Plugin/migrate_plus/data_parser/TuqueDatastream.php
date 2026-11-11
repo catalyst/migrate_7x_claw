@@ -151,7 +151,7 @@ class TuqueDatastream extends DataParserPluginBase {
   /**
    * {@inheritdoc}
    */
-  protected function openSourceUrl($url) {
+  protected function openSourceUrl($url): bool {
     $this->datastreams = [];
     $this->PID = NULL;
     // We expect PIDs or Fedora object URLs.
@@ -178,7 +178,7 @@ class TuqueDatastream extends DataParserPluginBase {
   /**
    * {@inheritdoc}
    */
-  protected function fetchNextRow() {
+  protected function fetchNextRow(): void {
     $datastream = array_shift($this->datastreams);
 
     if ($datastream) {
@@ -226,7 +226,7 @@ class TuqueDatastream extends DataParserPluginBase {
    * Islandora Source can provide 0 urls, we need to exit or it throws an
    * error.
    */
-  protected function nextSource() {
+  protected function nextSource(): bool {
     if (count($this->urls) == 0) {
       return FALSE;
     }
